@@ -59,6 +59,11 @@ class AuthController extends AbstractActionController {
                 $result = $authService->authenticate();
 
                 if ($result->isValid()) {
+                    $storage = $authService->getStorage();
+                    $storage->write($authAdapter->getResultRowObject(array(
+                        'username', 
+                        'role',
+                    )));
                     return $this->redirect()->toRoute('auth');
                 } else {
                     $resultMsg = 'Inlog niet correct';
@@ -79,6 +84,17 @@ class AuthController extends AbstractActionController {
         
         return $this->redirect()->toRoute('auth');
     }
+    
+    public function testuserAction()
+    {
+        
+    }
+    
+    public function testadminAction()
+    {
+        
+    }
+    
 }
 
 ?>

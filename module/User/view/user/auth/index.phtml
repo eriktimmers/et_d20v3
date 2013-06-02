@@ -12,6 +12,6 @@ $this->headTitle($title);
     <?php if ($identity == null): ?>
     Not logged in
     <?php else: ?>
-        Logged in as <?php echo $identity; ?>
+        Logged in as <?php echo $identity->username; ?> in role <?php echo $identity->role; ?>
     <?php endif; ?>
 </p>
