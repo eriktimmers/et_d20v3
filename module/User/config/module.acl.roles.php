@@ -9,6 +9,7 @@ return array(
     ),
     'user'=> array(
          array('user', 'auth::testuser'),       
+         array('spell', 'spell::index'),       
     ),
     'admin'=> array(
          array('user', 'auth::testadmin'), 

@@ -40,7 +40,8 @@ class Module
         $eventManager->attach('route', array($this, 'checkAuth'));      
     }    
     
-    public function checkAuth(MvcEvent $e) {
+    public function checkAuth(MvcEvent $e) 
+    {
         $auth = new AuthenticationService();
         
         $role = 'free';
@@ -72,7 +73,8 @@ class Module
         $roles = include __DIR__ . '/config/module.acl.roles.php';
         
         $acl->addResource('application'); // Application module
-        $acl->addResource('user'); // Album module         
+        $acl->addResource('user'); // Album module   
+        $acl->addResource('spell');
         
         $parents = array();
         foreach($roles as $role=>$roleAccess) {
