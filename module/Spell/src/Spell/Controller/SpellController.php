@@ -12,11 +12,23 @@ use Zend\View\Model\ViewModel;
  */
 class SpellController extends AbstractActionController {
     
+    protected $spellTable;
+    
     public function indexAction()
     {
         
-        return array(
-        );
+        return new ViewModel(array(
+            'spells' => $this->getSpellTable()->fetchAll(),
+        ));
+    }
+    
+    public function getSpellTable()
+    {
+        if (!$this->spellTable) {
+            $sm = $this->getServiceLocator();
+            $this->spellTable = $sm->get('\Spell\Model\SpellTable');
+        }
+        return $this->spellTable;
     }
 }
 

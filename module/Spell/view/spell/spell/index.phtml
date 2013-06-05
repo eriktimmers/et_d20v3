@@ -1,1 +1,12 @@
-spell index
+<?php
+
+$title = 'Spells';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p></p>
+
+<?php foreach($this->spells as $spell): ?>
+
+<?php echo $spell->name; ?><br/>
+<?php endforeach; ?>
