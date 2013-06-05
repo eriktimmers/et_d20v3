@@ -25,7 +25,7 @@ class SpellTable
     
     public function getSpell($id)
     {
-        $resultSet = $this->tableGateway->select(array('id' => (int)$id));
+        $resultSet = $this->tableGateway->select(array('spl_id' => (int)$id));
         $row = $resultSet->current();
         if (!$row) {
             throw new \Exception("Could not find spell " . (int)$id);

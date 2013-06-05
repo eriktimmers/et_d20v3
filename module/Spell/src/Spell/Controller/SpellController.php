@@ -16,10 +16,18 @@ class SpellController extends AbstractActionController {
     
     public function indexAction()
     {
-        
         return new ViewModel(array(
             'spells' => $this->getSpellTable()->fetchAll(),
         ));
+    }
+    
+    public function viewAction()
+    {
+        $id = (int)$this->params()->fromRoute('id', 0);
+        return new ViewModel(array(
+            'id' => $id,
+            'spell' => $this->getSpellTable()->getSpell($id),
+        ));        
     }
     
     public function getSpellTable()

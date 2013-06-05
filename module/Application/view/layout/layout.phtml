@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <?php echo $this->headTitle('Erik\'s D20 Database', 'PREPEND')->setSeparator(' - '); 
         
-            echo $this->HeadMeta()->appendName('author', 'Erik'); 
-            echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+            echo $this->headMeta()->appendName('author', 'Erik')
+                                  ->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))

@@ -2,6 +2,10 @@
 
 $title = 'Spells';
 $this->headTitle($title);
+$this->headMeta()->appendName('description', 'Overview and details of all RPG-spells available');              
+
+$this->inlineScript()->appendFile('/js/spells.js', 'text/javascript');
+
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <p></p>
