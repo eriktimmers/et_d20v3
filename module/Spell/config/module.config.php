@@ -29,5 +29,14 @@ return array(
         'template_path_stack' => array(
             'spell' => __DIR__ . '/../view/',
         ),
+        'template_map' => array(
+            'partial/spellrow' => __DIR__ . '/../view/partial/spellrow.phtml',
+        ),        
     ),
+    
+    'view_helpers' => array(
+        'invokables'=> array(
+            'iconhelper' => 'Spell\View\Helper\Iconhelper'  
+        )
+    ),    
 );

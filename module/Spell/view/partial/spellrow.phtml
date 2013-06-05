@@ -1,0 +1,26 @@
+
+<tr class="list_spells">
+    <td class="name"><?= $this->spell->name; ?></td>
+    <td class="classlevel"><?php /*$this->cls_name */?></td>
+    <td class="description"><?= $this->spell->shortdescription ?></td>
+    <td class="icons"><?
+        echo $this->iconhelper('eye.png', 'view', 
+                               '/spell/view/' . $this->spell->id, 
+                               array("type" => "spell", 
+                                       "id" => $this->spell->id));
+        echo $this->iconhelper('pencil.png', 'edit', 
+                               '/spell/edit/' . $this->spell->id, 
+                               array("type" => "spell", 
+                                       "id" => $this->spell->id));
+        echo $this->iconhelper('document-copy.png', 'copy', 
+                               null, 
+                               array("type" => "spell", 
+                                       "id" => $this->spell->id));
+        echo $this->iconhelper('cross-button.png', 'delete', 
+                               null, 
+                               array("type" => "spell", 
+                                       "id" => $this->spell->id));
+
+        ?></td>
+        
+</tr>

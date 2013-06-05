@@ -6,7 +6,15 @@ $this->headTitle($title);
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 <p></p>
 
-<?php foreach($this->spells as $spell): ?>
 
-<?php echo $spell->name; ?><br/>
-<?php endforeach; ?>
+<table>
+<?php 
+    foreach($this->spells as $spell): 
+        echo $this->partial('partial/spellrow', array('spell' => $spell)); 
+    endforeach; 
+?>
+</table>
+
+<?php $this->placeholder('buttons')->captureStart(); ?>
+<a class="mainmenu" href="/spell/edit/">Create New</a>
+<?php $this->placeholder('buttons')->captureEnd() ?>
