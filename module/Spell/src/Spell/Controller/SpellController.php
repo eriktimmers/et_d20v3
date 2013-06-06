@@ -4,6 +4,7 @@ namespace Spell\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Spell\Form\SpellForm;
 
 /**
  * Description of SpellController
@@ -29,6 +30,34 @@ class SpellController extends AbstractActionController {
             'spell' => $this->getSpellTable()->getSpell($id),
         ));        
     }
+    
+    
+    public function editAction()
+    {
+        $form = new SpellForm();
+        $resultMsg = '';
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {       
+            
+        } else {
+            $id = (int)$this->params()->fromRoute('id', 0);
+        }
+        
+        return new ViewModel(array('form' => $form,
+                     'resultMsg' => $resultMsg
+        ));        
+    }
+    
+    public function copyAction()
+    {
+        $id = (int)$this->params()->fromRoute('id', 0);
+    }
+    
+    public function deleteAction()
+    {
+        $id = (int)$this->params()->fromRoute('id', 0);
+    }   
     
     public function getSpellTable()
     {

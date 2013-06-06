@@ -234,3 +234,17 @@ img.cover {
     width: 130px;
 }
 
+form label{
+    display: block;
+}
+
+form label span {
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+form label textarea {
+    width: 500px;
+    height: 100px;
+}

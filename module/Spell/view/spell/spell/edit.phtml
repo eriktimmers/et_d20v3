@@ -1,0 +1,23 @@
+<?php
+
+$title = 'Spell Edit';
+$this->headTitle($title);
+$this->headMeta()->appendName('description', 'Edit or Cretae of all RPG-spells available');              
+
+$this->inlineScript()->appendFile('/js/spells.js', 'text/javascript');
+
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p></p>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('spell', array('action' => 'edit')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('name'));
+echo $this->formRow($form->get('shortdescription'));
+echo $this->formRow($form->get('longdescription'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

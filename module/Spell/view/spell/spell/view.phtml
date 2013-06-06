@@ -1,4 +1,13 @@
-<h1><?= $this->spell->name ?></h1>
+<?php
+
+$title = $this->spell->name;
+$this->headTitle($title);
+$this->headMeta()->appendName('description', 'Details of spell "' . $this->escapeHtml($this->spell->name) . '"');              
+
+$this->inlineScript()->appendFile('/js/spells.js', 'text/javascript');
+
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
 
 <table border="0" cellpadding="0" cellspacing="0" class="baseinfotable">
     <tbody>
