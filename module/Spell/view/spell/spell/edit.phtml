@@ -17,7 +17,15 @@ $form->prepare();
 echo $this->form()->openTag($form);
 echo $this->formHidden($form->get('id'));
 echo $this->formRow($form->get('name'));
+echo $this->formRow($form->get('castingtime'));
+echo $this->formRow($form->get('range'));
+echo $this->formRow($form->get('effecttype'));
 echo $this->formRow($form->get('shortdescription'));
 echo $this->formRow($form->get('longdescription'));
 echo $this->formSubmit($form->get('submit'));
 echo $this->form()->closeTag();
+
+$this->placeholder('buttons')->captureStart(); ?>
+<a class="mainmenu" href="/spell/">Spells</a>
+<a class="menuview" href="/spell/view/<?= $this->id ?>">View</a>
+<?php $this->placeholder('buttons')->captureEnd() ?>

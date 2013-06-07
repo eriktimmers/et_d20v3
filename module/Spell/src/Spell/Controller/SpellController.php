@@ -5,6 +5,7 @@ namespace Spell\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Spell\Form\SpellForm;
+use Spell\Model\Spell;
 
 /**
  * Description of SpellController
@@ -39,24 +40,51 @@ class SpellController extends AbstractActionController {
 
         $request = $this->getRequest();
         if ($request->isPost()) {       
+            $spell = new Spell();
+            $form->setInputFilter($spell->getInputFilter());
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                var_dump($form->getData());
+                $spell->exchangeArray($form->getData());
+                $this->getSpellTable()->saveSpell($spell);
+                
+                return $this->redirect()->toRoute('spell');
+            }
             
         } else {
-            $id = (int)$this->params()->fromRoute('id', 0);
+            $id = (int)$this->params()->fromRoute('id', 0); 
+            
+            try {
+                $spell = $this->getSpellTable()->getSpell($id);
+                $form->bind($spell);
+            } catch (\Exception $ex) {
+            }
         }
-        
-        return new ViewModel(array('form' => $form,
-                     'resultMsg' => $resultMsg
+
+        return new ViewModel(array(
+            'id' => $id,
+            'form' => $form,
+            'resultMsg' => $resultMsg,
         ));        
     }
     
     public function copyAction()
     {
         $id = (int)$this->params()->fromRoute('id', 0);
+        $this->getSpellTable()->copySpell($id);
+        $view = new ViewModel();
+        $view->setTerminal(true);
+        return $view;        
     }
     
     public function deleteAction()
     {
         $id = (int)$this->params()->fromRoute('id', 0);
+        $this->getSpellTable()->deleteSpell($id);
+        $view = new ViewModel();
+        $view->setTerminal(true);
+        return $view;
     }   
     
     public function getSpellTable()

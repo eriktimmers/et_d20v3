@@ -27,8 +27,36 @@ class SpellForm extends Form
             'options' => array(
                 'label' => 'Name',
             ),
-            
         ));
+           
+        $this->add(array(
+            'name' => 'castingtime',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Casting Time',
+            ),
+        ));        
+        $this->add(array(
+            'name' => 'range',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Range',
+            ),
+        ));        
+        $this->add(array(
+            'name' => 'effecttype',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Effecttype',
+            ),
+        ));
+        
         $this->add(array(
             'name' => 'shortdescription',
             'attributes' => array(

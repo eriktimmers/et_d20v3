@@ -63,20 +63,20 @@ $this->inlineScript()->appendFile('/js/spells.js', 'text/javascript');
                 <td>Material Component</td>
                 <td><?= $this->item['spl_material'] ?></td>
             </tr>      
-        <? endif; ?>
+        <? endif; */ ?>
         <tr class="baseinfo">
             <td>Casting time</td>
-            <td><?= $this->item['spl_castingtime'] ?></td>
-        </tr>               
+            <td><?= $this->spell->castingtime; ?></td>
+        </tr>
         <tr class="baseinfo">
             <td>Range</td>
-            <td><?= $this->item['spl_range'] ?></td>
-        </tr>               
+            <td><?= $this->spell->range; ?></td>
+        </tr>            
         <tr class="baseinfo">
-            <td><?= $this->item['spl_effecttype'] ?></td>
-            <td><?= $this->item['spl_effect'] ?></td>
+            <td><?= $this->spell->effecttype; ?></td>
+            <td><?php /*$this->spell->effect;*/ ?></td>
         </tr>          
-        <tr class="baseinfo">
+<?php  /*      <tr class="baseinfo">
             <td>Duration</td>
             <td><?= $this->item['spl_duration'] ?></td>
         </tr>               
