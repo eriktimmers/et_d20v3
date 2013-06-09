@@ -1,0 +1,27 @@
+<?php
+
+$title = 'Gamesystem';
+$this->headTitle($title);
+$this->headMeta()->appendName('description', 'Overview and details of all RPG-gamesysystems available');              
+
+$this->inlineScript()->appendFile('/js/gamesystems.js', 'text/javascript');
+
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p></p>
+
+
+<ul>
+<?php 
+    foreach($this->gamesystems as $game): 
+        echo $this->partial('partial/d20basicrow', 
+                array('object' => $game,
+                    'linkprefix' => 'd20/gamesystem/',
+            )); 
+    endforeach; 
+?>
+</ul>
+
+<?php $this->placeholder('buttons')->captureStart(); ?>
+<a class="mainmenu" href="/d20/gamesystem/edit">Create New</a>
+<?php $this->placeholder('buttons')->captureEnd() ?>

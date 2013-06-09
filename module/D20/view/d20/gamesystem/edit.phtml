@@ -1,0 +1,25 @@
+<?php
+
+$title = 'Gamesystem Edit';
+$this->headTitle($title);
+$this->headMeta()->appendName('description', 'Edit or Create of all gamesystem available');              
+
+$this->inlineScript()->appendFile('/js/gamesystems.js', 'text/javascript');
+
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p></p>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('d20gamesystem', array('action' => 'edit')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('name'));
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+
+$this->placeholder('buttons')->captureStart(); ?>
+<a class="mainmenu" href="/d20/gamesystem/">Gamesystems</a>
+<?php $this->placeholder('buttons')->captureEnd() ?>

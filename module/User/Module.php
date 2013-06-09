@@ -50,6 +50,8 @@ class Module
         }
         
         $routeMatch = $e->getRouteMatch();
+        //var_dump($routeMatch);die();
+        
         $controllerClass = $routeMatch->getParam('controller', 'not-found');
         $moduleName = strtolower(substr($controllerClass, 0, strpos($controllerClass, '\\')));
         $controllerName = strtolower(substr($controllerClass, strrpos($controllerClass, '\\')+1));
@@ -73,8 +75,10 @@ class Module
         $roles = include __DIR__ . '/config/module.acl.roles.php';
         
         $acl->addResource('application'); // Application module
-        $acl->addResource('user'); // Album module   
+        $acl->addResource('user'); // User module   
         $acl->addResource('spell');
+        $acl->addResource('d20');
+
         
         $parents = array();
         foreach($roles as $role=>$roleAccess) {

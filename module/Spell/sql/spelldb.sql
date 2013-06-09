@@ -1,3 +1,19 @@
+CREATE TABLE IF NOT EXISTS `gamesystem` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `systeem`
+--
+
+INSERT INTO `gamesystem` (`id`, `name`) VALUES
+(3, 'Dungeons & Dragons 3.5'),
+(5, 'D20 Modern'),
+(6, 'Pathfinder');
+
+
 
 CREATE TABLE IF NOT EXISTS `spell` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,

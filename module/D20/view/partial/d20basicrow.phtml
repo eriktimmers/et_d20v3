@@ -1,0 +1,13 @@
+
+<li class="identitylist">
+    <?= $this->object->name; ?> <?
+        echo $this->iconhelper('pencil.png', 'edit', 
+                               $this->linkPrefix . 'edit/' . $this->object->id, 
+                               array("type" => "spell", 
+                                       "id" => $this->object->id));
+        echo $this->iconhelper('cross-button.png', 'delete', 
+                               null, 
+                               array("type" => 'id', 
+                                       "id" => $this->object->id));
+
+        ?></li>
