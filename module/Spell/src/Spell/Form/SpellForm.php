@@ -58,6 +58,67 @@ class SpellForm extends Form
         ));
         
         $this->add(array(
+            'name' => 'effect',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Effect',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'duration',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Duration',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'savingthrow',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Savingthrow',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'spellresistance',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Spellresistance',
+            ),
+        ));
+        
+        $this->add(array(
+            'name' => 'components',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Components',
+            ),
+        ));
+        
+        
+        $this->add(array(
+            'name' => 'material',
+            'attributes' => array(
+                'type' => 'Text',
+            ),
+            'options' => array(
+                'label' => 'Material',
+            ),
+        ));        
+        
+        $this->add(array(
             'name' => 'shortdescription',
             'attributes' => array(
                 'type' => 'textarea',
@@ -66,6 +127,15 @@ class SpellForm extends Form
                 'label' => 'Short Description',
             ),
         ));
+        $this->add(array(
+            'name' => 'mediumdescription',
+            'attributes' => array(
+                'type' => 'textarea',
+            ),
+            'options' => array(
+                'label' => 'Medium Description',
+            ),
+        ));        
         $this->add(array(
             'name' => 'longdescription',
             'attributes' => array(

@@ -52,18 +52,18 @@ $this->inlineScript()->appendFile('/js/spells.js', 'text/javascript');
                 <td>Domains</td>
                 <td><?= $value['dom_name'] ?> <?= $value['spdm_level'] ?></td>
             </tr>        
-        <? endforeach; ?>
+        <? endforeach; */?>
    
         <tr class="baseinfo">
             <td>Components</td>
-            <td><?= $this->item['spl_components'] ?></td>
+            <td><?= $this->spell->components; ?></td>
         </tr>          
-        <? if ($this->item['spl_material']): ?>
+        <? if ($this->spell->material): ?>
             <tr class="baseinfo">
                 <td>Material Component</td>
-                <td><?= $this->item['spl_material'] ?></td>
+                <td><?= $this->spell->material; ?></td>
             </tr>      
-        <? endif; */ ?>
+        <? endif; ?>
         <tr class="baseinfo">
             <td>Casting time</td>
             <td><?= $this->spell->castingtime; ?></td>
@@ -74,29 +74,29 @@ $this->inlineScript()->appendFile('/js/spells.js', 'text/javascript');
         </tr>            
         <tr class="baseinfo">
             <td><?= $this->spell->effecttype; ?></td>
-            <td><?php /*$this->spell->effect;*/ ?></td>
+            <td><?= $this->spell->effect; ?></td>
         </tr>          
-<?php  /*      <tr class="baseinfo">
+      <tr class="baseinfo">
             <td>Duration</td>
-            <td><?= $this->item['spl_duration'] ?></td>
+            <td><?= $this->spell->duration; ?></td>
         </tr>               
         <tr class="baseinfo">
             <td>Saving Throw</td>
-            <td><?= $this->item['spl_savingthrow'] ?></td>
+            <td><?= $this->spell->savingthrow; ?></td>
         </tr>   
         <tr class="baseinfo">
             <td>Spell Resistance</td>
-            <td><?= $this->item['spl_spellresistance'] ?></td>
-        </tr>   */ ?>   
+            <td><?= $this->spell->spellresistance; ?></td>
+        </tr>
         <? if ($this->spell->longdescription): ?>
             <tr class="baseinfo">
                 <td colspan="2" class="detailtext"><?= $this->spell->longdescription; ?></td>
             </tr>   
-        <? /*else: ?>    
+        <? else: ?>    
             <tr class="baseinfo">
                 <td colspan="2" class="detailtext"><?= $this->spell->mediumdescription; ?></td>
             </tr>             
-        <?*/ endif; ?>            
+        <? endif; ?>            
 
     </tbody>
 </table>

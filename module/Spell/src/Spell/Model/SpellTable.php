@@ -72,9 +72,17 @@ class SpellTable
             'castingtime'   => $spell->castingtime,
             'range'         => $spell->range,
             'effecttype'    => $spell->effecttype,
+            'effect'        => $spell->effect,
+            'duration'      => $spell->duration,
+            'savingthrow'   => $spell->savingthrow,
+            'spellresistance' => $spell->spellresistance,
+            'components'    => $spell->components,
+            'material'      => $spell->material,
             'shortdescription' => $spell->shortdescription,
-            'longdescription' => $spell->longdescription,            
+            'mediumdescription' => $spell->mediumdescription,
+            'longdescription'  => $spell->longdescription,            
         );
+
         return $data;
     }
 }
